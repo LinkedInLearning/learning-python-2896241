@@ -21,9 +21,19 @@ def main():
     result = "x is less than y" if (x < y) else "x is greater than or equal to y"
     print(result)
 
-    # Python does not have support for higher-order conditionals
-    # like "switch-case" in other languages
-
+    # new in Python 3.10
+    # the match-case construct can be used for multiple comparisons
+    value = "one"
+    match value:
+        case "one":
+            result = 1
+        case "two":
+            result = 2
+        case "three" | "four":
+            result = (3, 4)
+        case _:
+            result = -1
+    print(result)
 
 if __name__ == "__main__":
     main()
